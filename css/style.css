@@ -1,0 +1,186 @@
+/* CSS-переменные */
+:root {
+    --main-text-color: #212121;
+    --second-text-color: #757575;
+    --accent-color: #2196f3;
+    --main-bg-color: #ffffff;
+    --second-bg-color: #f5f4fa;
+    --third-bg-color: #2f303a;
+}
+/* Базовые настройки CSS */
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+}
+/* Убирает подчеркивание у всех ссылок */
+a {
+    text-decoration: none;
+}
+/* Убирает флажки у элементов списков */
+.list {
+    list-style: none;
+}
+
+/* Страница студия */
+/* Задает общие настройки шрифта хедера */
+.header {
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+}
+/* Логотип хедера */
+.header-logo {
+    color: #000000;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+}
+/* Голубой цвет логотипа Web */
+.logo-web {
+    color: var(--accent-color);
+}
+/* Текст основной навигации хедера */
+.nav-main .link {
+    color: var(--main-text-color);
+}
+/*Выделение активной страницы хедера */
+.nav-main .link.current {
+    color: var(--accent-color);
+}
+/* цвет текста основной навигации при акценте */
+nav.nav-main .link:hover,
+nav.nav-main .link.focus {
+    color:var(--accent-color);
+}
+/* цвет текста инфо части навигации */
+.header-info .link {
+    color: var(--second-text-color);
+}
+/* цвет текста инфо части навигации при акценте */
+.header-info .link:hover,
+.header-info .link.focus {
+    color: var(--accent-color);
+}
+/* фон героя */
+.hero {
+    background-color: var(--third-bg-color);
+}
+/* Заголовок героя */
+.hero-title {
+    color: var(--main-bg-color);
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+/* кнопка героя */
+.button.primary {
+    color: var(--main-bg-color);
+    background-color: var(--accent-color);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    text-align: center;
+    letter-spacing: 0.06em;
+}
+/* Заголовки h3 секции преимущества */
+.feature .title {
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+}
+/* Текст секции преимущества */
+.feature .text {
+    color: var(--second-text-color);
+}
+/* Заголовки секций */
+.section-title {
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+}
+/* Доп фон секции Наша команда  */
+.team {
+    background-color: var(--secohd-bg-color);
+}
+/* Заголовки h3 Наша команда */
+.team-list .title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+}
+/* Текст секции Наша команда */
+.team-list .text {
+    color: var(--second-text-color);
+    font-size: 16px;
+    line-height: 1.19;
+}
+/* фон футера */
+.footer {
+    background-color: var(--third-bg-color);
+}
+/* лого футера */
+.footer-logo {
+    color: var(--main-bg-color);
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+}
+/* уберем курсив в адресе футера */
+.footer-address {
+    font-style: normal;
+}
+/* Физический адрес в футере */
+.footer-address .text {
+    color: var(--main-bg-color);
+}
+/* почта и телефон футера */
+.footer-address .link {
+    color: rgba(255, 255, 255, 0.6);
+}
+/* акцент для почты и телефона в футере */
+.footer-address .link:hover,
+.footer-address .link:focus {
+  color: var(--accent-color);
+}
+
+/* Страница Портфолио */
+
+/* Кнопки*/
+.button.secondary {
+    color: var(--main-text-color);
+    background-color: var(--secohd-bg-color);
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    letter-spacing: 0.03em;
+}
+/* Акцент кнопок */
+.button.secondary:hover,
+.button.secondary:focus {
+  color: var(--main-bg-color);
+  background-color: var(--accent-color);
+}
+/* Цвет заголовков */
+.portfolio-list .title {
+    color: var(--main-text-color);
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+}
+/*Цвет текста */
+.portfolio-list .text {
+    color: var(--second-text-color);
+    font-size: 16px;
+    line-height: 1.87;
+}
