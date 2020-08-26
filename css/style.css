@@ -20,8 +20,10 @@ body {
 a {
     text-decoration: none;
 }
-/* Убирает флажки у элементов списков */
+/* Убирает флажки и отступы у элементов списков */
 .list {
+    padding: 0;
+    margin: 0;
     list-style: none;
 }
 
@@ -32,8 +34,19 @@ a {
     line-height: 1.14;
     letter-spacing: 0.02em;
 }
+/* весь хэдер в одну строку */
+.header-flex {
+    display: flex;
+    align-items: center;
+}
+/* логотип и навигация в одну строку */
+.nav-flex {
+    display: flex;
+    align-items: center;
+}
 /* Логотип хедера */
 .header-logo {
+    margin-right: 93px;
     color: #000000;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
@@ -41,48 +54,79 @@ a {
     line-height: 1.19;
     letter-spacing: 0.03em;
 }
-/* Голубой цвет логотипа Web */
-.logo-web {
-    color: var(--accent-color);
+/* элементы навигации в строку */
+.nav-main {
+    display: flex;
 }
-/* Текст основной навигации хедера */
+/* все кроме последнего элемента навигации */
+.nav-main > .item:not(:last-child) {
+    margin-right: 50px;
+}
+/* основная навигация хэдера */
 .nav-main .link {
-    color: var(--main-text-color);
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: inherit;
 }
-/*Выделение активной страницы хедера */
-.nav-main .link.current {
-    color: var(--accent-color);
+/* Выделение активной страницы хэдера + Web в логотипе */
+.nav-main .link.current,
+.header-logo .current,
+.footer-logo .current {
+  color: var(--accent-color);
 }
-/* цвет текста основной навигации при акценте */
-nav.nav-main .link:hover,
-nav.nav-main .link.focus {
-    color:var(--accent-color);
+/* цвет текста основной навигации при акценте*/
+.nav-main .link:hover,
+.nav-main .link:focus {
+  color: var(--accent-color);
 }
-/* цвет текста инфо части навигации */
+/* телефон и почту хэдера в строку */
+.header-info {
+    display: flex;
+    margin-left: auto;
+}
+/* все кроме последнего элемента списка header-info*/
+.header-info .item:not(:last-child) {
+    margin-right: 50px;
+}
+/* инфо часть навигации */
 .header-info .link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
     color: var(--second-text-color);
 }
 /* цвет текста инфо части навигации при акценте */
 .header-info .link:hover,
-.header-info .link.focus {
-    color: var(--accent-color);
+.header-info .link:focus {
+  color: var(--accent-color);
 }
-/* фон героя */
+/* герой */
 .hero {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    margin-bottom: 94px;
     background-color: var(--third-bg-color);
+    text-align: center;
 }
 /* Заголовок героя */
 .hero-title {
+    margin-top: 0;
+    margin-bottom: 30px;
     color: var(--main-bg-color);
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
-    text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
 /* кнопка героя */
 .button.primary {
+    display: inline-block;
+    min-width: 200px;
+    padding: 10px 32px;
+    border-radius: 4px;
+
     color: var(--main-bg-color);
     background-color: var(--accent-color);
     font-weight: 700;
@@ -91,40 +135,112 @@ nav.nav-main .link.focus {
     text-align: center;
     letter-spacing: 0.06em;
 }
+/* список преимуществ в строку */
+.feature {
+    display: flex;
+}
+/* наполнение контейнера преимуществ */
+.feature .item {
+    flex-basis: calc((100% - 3 * 30px) / 4);
+}
+/* отступы всем кроме последнего элемента списка перимуществ */
+.feature .item:not(:last-child) {
+    margin-right: 30px;
+}
+
 /* Заголовки h3 секции преимущества */
 .feature .title {
+    margin-top: 0;
+    margin-bottom: 10px;
+
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
 }
 /* Текст секции преимущества */
 .feature .text {
+    margin-top: 0;
+    margin-bottom: 0;
+
     color: var(--second-text-color);
 }
 /* Заголовки секций */
 .section-title {
+    margin-top: 0;
+    margin-bottom: 50px;
+
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
 }
-/* Доп фон секции Наша команда  */
-.team {
+/* оформление последней секции  */
+.section:last-child {
+    padding-top: 94px;
+    padding-bottom: 94px;
     background-color: var(--secohd-bg-color);
+    text-align: center;
+}
+/* всем кроме последней секции задаем нижний марджин */
+.section:not(:last-child) {
+    margin-bottom: 94px;
+}
+/* список примеров работ в строку */
+.examples-list {
+    display: flex;
+}
+.examples-list .item {
+    flex-basis: calc((100% - 2 * 30px) / 3);
+}
+/* отступы всем кроме последнего элемента списка */
+.examples-list .item:not(:last-child) {
+    margin-right: 30px;
+}
+/* уберем лишние пиксели внизу у картинок */
+.examples-list .item > img {
+    display: block;
+}
+/* список команды */
+.team-list {
+    display: flex;
+}
+/* элементы списка наша команда */
+.team-list .item {
+    flex-basis: calc((100% - 3 * 30px) / 4);
+    padding-bottom: 30px;
+    border-radius: 0px 0px 4px 4px;
+    background-color: var(--main-bg-color);
+}
+/*отступ всем кроме последнего элемента списка */
+.team-list .item:not(:last-child) {
+    margin-right: 30px;
+}
+/* уберем лишние пиксели внизу у картинок */
+.team-list .item > img {
+    display: block;
 }
 /* Заголовки h3 Наша команда */
 .team-list .title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
 }
 /* Текст секции Наша команда */
 .team-list .text {
+    margin-top: 0;
+    margin-bottom: 0;
+
     color: var(--second-text-color);
     font-size: 16px;
     line-height: 1.19;
 }
-/* фон футера */
+/* футер */
 .footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
     background-color: var(--third-bg-color);
 }
 /* лого футера */
@@ -135,16 +251,23 @@ nav.nav-main .link.focus {
     font-size: 26px;
     line-height: 1.19;
 }
-/* уберем курсив в адресе футера */
+/* адрес футера */
 .footer-address {
+    margin-top: 20px;
+
     font-style: normal;
 }
 /* Физический адрес в футере */
 .footer-address .text {
+    margin: 0;
+
     color: var(--main-bg-color);
 }
 /* почта и телефон футера */
 .footer-address .link {
+    display: inline-block;
+    margin-top: 9px;
+
     color: rgba(255, 255, 255, 0.6);
 }
 /* акцент для почты и телефона в футере */
@@ -155,8 +278,31 @@ nav.nav-main .link.focus {
 
 /* Страница Портфолио */
 
+/* отступы основного блока портфолио */
+.portfolio {
+    margin-top: 94px;
+    margin-bottom: 94px;
+}
+/* список кнопок навигации портфолио */
+.portfolio-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 34px;
+    padding-bottom: 16px;
+}
+/* отступ у всех кнпопок кроме последней */
+.portfolio-nav .item:not(:last-child) {
+    margin-right: 8px;
+}
+
 /* Кнопки*/
 .button.secondary {
+    display: inline-block;
+    min-width: 73px;
+    padding: 6px 22px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
     color: var(--main-text-color);
     background-color: var(--secohd-bg-color);
     font-family: inherit;
@@ -171,16 +317,63 @@ nav.nav-main .link.focus {
   color: var(--main-bg-color);
   background-color: var(--accent-color);
 }
-/* Цвет заголовков */
+/* список основных элементов страницы */
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* основные элементы страницы портфолио */
+.portfolio-list .item {
+    width: calc((100% - 2 * 30px) / 3);
+    margin-right: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border: 1px solid #eeeeee;
+    box-sizing: border-box;
+}
+/* каждому третьему убираем правый марджин */
+.portfolio-list .item:nth-child(3n) {
+    margin-right: 0;
+}
+/* последним трем убираем нижний марджин */
+.portfolio-list .item:nth-last-child(-n + 3) {
+    margin-bottom: 0;
+}
+/* уберем лишние пиксели внизу у картинок */
+.portfolio-list .link > img {
+    display: block;
+}
+/* заголовки элементов портфолио */
 .portfolio-list .title {
+    margin: 20px 0 4px 24px;
+    margin: 20px 24px 4px 24px;
+
     color: var(--main-text-color);
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
 }
-/*Цвет текста */
+/* текст элементов портфолио */
 .portfolio-list .text {
+    margin: 0 0 0 24px;
+    margin: 0 24px;
+
     color: var(--second-text-color);
     font-size: 16px;
     line-height: 1.87;
+}
+
+/* Геометрия контейнера */
+.container {
+    width: 1200px;
+    margin: 0px auto;
+    padding: 0px 15px;
+    /* outline: 2px solid orange; */
+    outline: 2px solid orange;
+}
+/* Временно уберем марджины у скрытых заголовка */
+.hidden {
+    display: none;
+    margin-top: 0;
+    margin-bottom: 0;
 }
