@@ -186,10 +186,7 @@ a {
     background-color: var(--secohd-bg-color);
     text-align: center;
 }
-/* всем кроме последней секции задаем нижний марджин */
-.section:not(:last-child) {
-    margin-bottom: 94px;
-}
+
 /* список примеров работ в строку */
 .examples-list {
     display: flex;
@@ -231,7 +228,7 @@ a {
 }
 /* Заголовки h3 Наша команда */
 .team-list .title {
-    margin-top: 30px;
+    margin-top: 0;
     margin-bottom: 10px;
 
     font-weight: 500;
@@ -357,18 +354,24 @@ a {
 }
 /* заголовки элементов портфолио */
 .portfolio-list .title {
-    margin: 20px 0 4px 24px;
-    margin: 20px 24px 4px 24px;
-
+    margin-top: 0;
+    margin-bottom: 4px;
     color: var(--main-text-color);
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
 }
+
+/* названия проектов */
+.project-name {
+    padding: 20px 24px;
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
+}
 /* текст элементов портфолио */
 .portfolio-list .text {
-    margin: 0 0 0 24px;
-    margin: 0 24px;
+    margin: 0;
 
     color: var(--second-text-color);
     font-size: 16px;
@@ -380,8 +383,6 @@ a {
     width: 1200px;
     margin: 0px auto;
     padding: 0px 15px;
-    /* outline: 2px solid orange; */
-    outline: 2px solid orange;
 }
 /* Временно уберем марджины у скрытых заголовка */
 .hidden {
